@@ -1,0 +1,49 @@
+{
+  "name": "node-starter-project",
+  "version": "0.1.0",
+  "description": "Starter Project For Node",
+  "main": "dist/index.js",
+  "repository": {
+    "private": true
+  },
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "start": "nodemon src/index.js --exec babel-node --presets stage-0",
+    "test": "npm run lint && npm run test-only",
+    "check-coverage": "true",
+    "build": "babel src --out-dir dist",
+    "lint": "eslint src",
+    "test-only": "mocha --compilers js:babel-register test/*.test.js"
+  },
+  "author": "Hitesh Khandelwal <hitesh@smartprix.com> (http://www.smartprix.com/)",
+  "license": "ISC",
+  "dependencies": {
+    "lodash": "4.13.1",
+    "sm-utils": "git://github.com/smartprix/sm-utils.git"
+  },
+  "devDependencies": {
+    "babel-cli": "6.10.1",
+    "babel-eslint": "6.1.0",
+    "babel-preset-stage-0": "6.5.0",
+    "babel-register": "6.9.0",
+    "chai": "3.5.0",
+    "eslint": "2.13.1",
+    "eslint-plugin-babel": "3.3.0",
+    "eslint-plugin-import": "1.9.2",
+    "eslint-config-smartprix": "1.1.2",
+    "ghooks": "1.2.4",
+    "mocha": "2.5.3"
+  },
+  "babel": {
+    "presets": [
+      "stage-0"
+    ]
+  },
+  "config": {
+    "ghooks": {
+      "pre-commit": "npm run build && npm test && npm run check-coverage"
+    }
+  }
+}
