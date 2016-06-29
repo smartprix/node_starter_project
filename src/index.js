@@ -1,9 +1,9 @@
 function hello() {
-    console.log("Hello From Node!!");
+	console.log('Hello From Node!!');
 }
 
 if (require.main === module) {
-    hello();
+	hello();
 }
 
 module.exports = hello;
