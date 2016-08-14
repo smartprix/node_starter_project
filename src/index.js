@@ -1,3 +1,5 @@
+global.d = require('sm-utils/d');
+
 function hello() {
 	console.log('Hello From Node!!');
 }
