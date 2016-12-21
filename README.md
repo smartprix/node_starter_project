@@ -15,6 +15,11 @@ This is an empty project for quickly starting up with nodejs.
 * Compiled code (from babel) will be stored in dist directory
 * Keep all your garbage files (temporary testing and all) in garbage directory
 
+#### How To Start:
+* Clone this directory
+* Update dependencies `ncu -u` and then run `yarn`
+* You are ready. Start writing your code in `src/index.js`
+
 #### Commands:
 ```bash
 # Run eslint to check coding conventions

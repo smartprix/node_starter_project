@@ -15,27 +15,25 @@
     "check-coverage": "true",
     "build": "babel src --out-dir dist",
     "lint": "eslint src",
-    "test-only": "mocha --compilers js:babel-register test/*.test.js"
+    "test-only": "mocha --compilers js:babel-register test/*.test.js",
+    "precommit": "npm run build && npm test && npm run check-coverage"
   },
   "author": "Hitesh Khandelwal <hitesh@smartprix.com> (http://www.smartprix.com/)",
   "license": "ISC",
   "dependencies": {
-    "lodash": "4.15.0",
+    "lodash": "4.17.2",
     "sm-utils": "git://github.com/smartprix/sm-utils.git"
   },
   "devDependencies": {
-    "babel-cli": "6.14.0",
-    "babel-eslint": "6.1.2",
-    "babel-plugin-transform-es2015-modules-commonjs": "6.14.0",
-    "babel-preset-stage-0": "6.5.0",
-    "babel-register": "6.14.0",
+    "babel-cli": "6.18.0",
+    "babel-plugin-transform-es2015-modules-commonjs": "6.18.0",
+    "babel-preset-stage-0": "6.16.0",
+    "babel-register": "6.18.0",
     "chai": "3.5.0",
-    "eslint": "3.4.0",
-    "eslint-config-smartprix": "1.1.3",
-    "eslint-plugin-babel": "3.3.0",
-    "eslint-plugin-import": "1.14.0",
-    "ghooks": "1.3.2",
-    "mocha": "3.0.2"
+    "eslint": "3.12.2",
+    "eslint-config-smartprix": "3.1.4",
+    "mocha": "3.2.0",
+    "husky": "0.12.0"
   },
   "eslintConfig": {
     "extends": "smartprix",
@@ -49,10 +47,5 @@
       "transform-es2015-modules-commonjs"
     ],
     "sourceMaps": true
-  },
-  "config": {
-    "ghooks": {
-      "pre-commit": "npm run build && npm test && npm run check-coverage"
-    }
   }
 }
